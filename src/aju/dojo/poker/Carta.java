@@ -16,12 +16,16 @@ public class Carta implements Comparable<Carta>{
 	
 	/***
 	 * @param outraCarta A carta a ser comparada
-	 * @return Verdadeiro se a carta atual (this) for de mesmo valor da vari‡vel carta
+	 * @return Verdadeiro se a carta atual (this) tiver mesmo Valor que outraCarta
 	 */
 	public boolean par(Carta outraCarta) {
 		return outraCarta != null && valor == outraCarta.valor;
 	}
 
+	/***
+	 * @param outraCarta A carta a ser comparada
+	 * @return Verdadeiro se a carta atual (this) for maior que a outraCarta
+	 */
 	public boolean maiorQue(Carta outraCarta) {
 		return valor.getValor() > outraCarta.valor.getValor();
 	}

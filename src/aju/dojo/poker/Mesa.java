@@ -6,7 +6,12 @@ import java.util.List;
 
 public class Mesa {
 	
-	
+	/**
+	 * Método <b>principal</b> do jogo de Poker
+	 * @param jogador1 
+	 * @param jogador2
+	 * @return o Jogador que ganhou a partida
+	 */
 	public Jogador quemGanhou(Jogador jogador1, Jogador jogador2) {
 		ValorDaJogada pontuacao1 = pontuacaoMelhorJogada(jogador1);
 		ValorDaJogada pontuacao2 = pontuacaoMelhorJogada(jogador2);
@@ -18,6 +23,13 @@ public class Mesa {
 		}
 	}
 	
+	/**
+	 * Caso os dois jogadores tenham a mesma jogada, essa função descobre quem ganhou
+	 * @param pontuacao
+	 * @param jogador1
+	 * @param jogador2
+	 * @return
+	 */
 	private Jogador resolverEmpate(ValorDaJogada pontuacao, Jogador jogador1, Jogador jogador2) {
 		switch (pontuacao) {
 			case QUADRA:
@@ -84,6 +96,11 @@ public class Mesa {
 		return trinca(jogador1.mao).maiorQue(trinca(jogador2.mao)) ? jogador1 : jogador2;
 	}
 
+	/**
+	 * Descobre qual a jogada de pontuação mais alta que o jogador possui
+	 * @param jogador
+	 * @return
+	 */
 	public ValorDaJogada pontuacaoMelhorJogada(Jogador jogador) {
 		Collections.sort(jogador.mao);
 		
